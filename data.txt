@@ -1,0 +1,9 @@
+Environment Setup
+Github configurations
+
+React App
+Tailwindcsss,Reac Router, React Icons,Firebase,Framer motions
+FirebaseProject
+
+
+yarn add react-router-dom react-icons framer-motion
