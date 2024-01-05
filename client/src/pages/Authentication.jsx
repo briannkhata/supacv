@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Logo } from "../assets";
 import { Footer } from "../containers";
 import { AuthButtonWithProvider } from "../components";
 import { FaGoogle, FaGithub } from "react-icons/fa6";
+import { toast } from "react-toastify";
+import useUser from "../hooks/useUser";
+import { useNavigate } from "react-router-dom";
 
 function Authentication() {
+  const { data, isLoading, isError } = useUser();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isLoading && data) {
+      navigate("/", { replace: true });
+    }
+  }, [isLoading, data]);
+
   return (
     <div className="auth-section">
       {/*top section */}
